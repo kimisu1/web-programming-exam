@@ -1,0 +1,19 @@
+{
+  "name": "task-9-colors-react",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практичне завдання №9: зміна кольорів квадратів (React + Node.js)",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.5"
+  }
+}
