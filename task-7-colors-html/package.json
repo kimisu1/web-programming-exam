@@ -1,0 +1,10 @@
+{
+  "name": "task-7-colors-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практичне завдання №7: зміна кольорів квадратів (HTML, CSS, JavaScript + Node.js)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
