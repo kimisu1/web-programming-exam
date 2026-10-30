@@ -1,0 +1,10 @@
+{
+  "name": "task-1-average-age-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практичне завдання №1: середній вік (HTML, CSS, JavaScript + Node.js)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

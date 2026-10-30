@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Середній вік</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <table class="people-table">
+      <thead>
+        <tr>
+          <th>№ п/п</th>
+          <th>Посада</th>
+          <th>ПІБ</th>
+          <th>Вік</th>
+        </tr>
+      </thead>
+      <tbody id="people">
+        <tr>
+          <td class="number">1.</td>
+          <td>викладач</td>
+          <td>Степанов Степан Степанович</td>
+          <td class="age">33</td>
+        </tr>
+        <tr>
+          <td class="number">2.</td>
+          <td>викладач</td>
+          <td>Федоров Федір Федорович</td>
+          <td class="age">25</td>
+        </tr>
+        <tr>
+          <td class="number">3.</td>
+          <td>викладач</td>
+          <td>Антоненко Антон Антонович</td>
+          <td class="age">31</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="average-label">Середній вік:</td>
+          <td class="age" id="average-age"></td>
+        </tr>
+      </tfoot>
+    </table>
+    <button type="button" class="start-button" id="start-button">Старт</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
