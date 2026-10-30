@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Введення даних</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="panel">
+    <p class="panel-title">Введіть наступні дані:</p>
+    <div class="fields">
+      <label for="name">Ім’я:</label>
+      <input type="text" id="name" autocomplete="off">
+      <label for="age">Вік:</label>
+      <input type="number" id="age" min="0">
+    </div>
+    <button type="button" class="start-button" id="start-button">Старт</button>
+  </main>
+
+  <!-- Модальне вікно з введеними даними -->
+  <dialog class="modal" id="result-modal" aria-labelledby="modal-title">
+    <h2 id="modal-title">Введені дані</h2>
+    <p>Ім’я: <strong id="result-name"></strong></p>
+    <p>Вік: <strong id="result-age"></strong></p>
+    <form method="dialog" class="modal-actions">
+      <button class="start-button">Закрити</button>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
