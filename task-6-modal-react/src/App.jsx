@@ -1,42 +1,14 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './App.css';
-
-// Модальне вікно з даними, введеними у форму
-function ResultModal({ name, age, onClose }) {
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div
-        className="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <h2 id="modal-title">Введені дані</h2>
-        <p>
-          Ім’я: <strong>{name}</strong>
-        </p>
-        <p>
-          Вік: <strong>{age}</strong>
-        </p>
-        <div className="modal-actions">
-          <button type="button" className="start-button" onClick={onClose} autoFocus>
-            Закрити
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function App() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
 
   return (
     <>
-      <main className="panel" inert={isModalOpen}>
+      <main className="panel">
         <p className="panel-title">Введіть наступні дані:</p>
         <div className="fields">
           <label htmlFor="name">Ім’я:</label>
@@ -56,14 +28,24 @@ export default function App() {
             onChange={(event) => setAge(event.target.value)}
           />
         </div>
-        <button type="button" className="start-button" onClick={() => setIsModalOpen(true)}>
+        <button type="button" className="start-button" onClick={() => modalRef.current.showModal()}>
           Старт
         </button>
       </main>
 
-      {isModalOpen && (
-        <ResultModal name={name} age={age} onClose={() => setIsModalOpen(false)} />
-      )}
+      {/* Модальне вікно з введеними даними; закривається кнопкою «Закрити» або клавішею Escape */}
+      <dialog ref={modalRef} className="modal" aria-labelledby="modal-title">
+        <h2 id="modal-title">Введені дані</h2>
+        <p>
+          Ім’я: <strong>{name}</strong>
+        </p>
+        <p>
+          Вік: <strong>{age}</strong>
+        </p>
+        <form method="dialog" className="modal-actions">
+          <button className="start-button">Закрити</button>
+        </form>
+      </dialog>
     </>
   );
 }
