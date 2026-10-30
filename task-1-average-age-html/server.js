@@ -18,7 +18,8 @@ function send(res, status, type, body) {
 }
 
 const server = http.createServer((req, res) => {
-  const { pathname } = new URL(req.url, 'http://localhost');
+  // Шлях запиту без параметрів після «?»
+  const pathname = req.url.split('?')[0];
   const route = ROUTES[pathname];
 
   if (!route) {

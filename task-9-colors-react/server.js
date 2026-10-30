@@ -13,7 +13,7 @@ const CONTENT_TYPES = {
 };
 
 if (!fs.existsSync(path.join(DIST_DIR, 'index.html'))) {
-  console.error('Клієнтську частину ще не зібрано. Виконайте: npm run build');
+  console.error('Клієнтську частину ще не зібрано. Виконайте npm install, а потім npm run build');
   process.exit(1);
 }
 
@@ -23,7 +23,8 @@ function send(res, status, type, body) {
 }
 
 const server = http.createServer((req, res) => {
-  const { pathname } = new URL(req.url, 'http://localhost');
+  // Шлях запиту без параметрів після «?»
+  const pathname = req.url.split('?')[0];
   const filePath = path.join(DIST_DIR, pathname === '/' ? 'index.html' : pathname);
   const contentType = CONTENT_TYPES[path.extname(filePath)];
 
