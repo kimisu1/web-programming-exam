@@ -1,0 +1,10 @@
+{
+  "name": "task-2-average-age-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практичне завдання №2: середній вік (JavaScript + Node.js)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
