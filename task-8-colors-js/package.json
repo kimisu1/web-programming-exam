@@ -1,0 +1,10 @@
+{
+  "name": "task-8-colors-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практичне завдання №8: зміна кольорів квадратів (JavaScript + Node.js)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
